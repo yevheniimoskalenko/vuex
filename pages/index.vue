@@ -3,7 +3,11 @@
     <el-row>
       <el-col :span="24" :style="{width:'640px'}">
         <el-card class="box-card" v-for="(item,index) in Photos" :key="index">
-          <img :src="item.largeImageURL" class="image" :fit="fit" />
+          <el-image :src="item.largeImageURL" class="image" fit="cover" lazy="true">
+            <div slot="error" class="image-slot">
+              <i class="el-icon-picture-outline"></i>
+            </div>
+          </el-image>
         </el-card>
         <div class="card__bottom">
           <el-button type="primary" round :loading="load" @click="loadsPhoto">Загрузить</el-button>

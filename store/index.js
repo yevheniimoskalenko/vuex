@@ -11,7 +11,6 @@ export const mutations = {
     payload.forEach(element => {
       state.photos.push(element)
     });
-    // state.photos.push(payload[0])
   }
 }
 export const actions = {
